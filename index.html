@@ -17,38 +17,11 @@
     <div class="loader"></div>
 </div>
 
-<h1>The great search</h1>
-<h2>Vind de <span id="stoom">stoom</span>!</h2>
-<div id="damp" style="display:none;"><img src="images/startpoint.jpg" width="20%" height="20%">
+<h1>Schattenzoektocht met Jasmien en Hans!</h1>
+<h2>Proficiat!!</h2>
 
-
-    <div id="atDamp" style="display:none; color: green;">Success! <a href="stage1.html" class="btn btn-success">Ga naar de volgende fase</a> </div>
-    <div id="notAtDamp" style="display:none; color: red;">Je bevindt je niet op de juiste locatie!</div>
 </div>
 
-<script>
 
-document.getElementById("stoom").addEventListener("click",showStoom);
-
-function showStoom(){
-document.getElementById("damp").style.display = "block";
-
-setInterval(checkDamp, 5000);
-}
-
-function checkDamp(){
-atLocationWithRadius(51.056065, 3.740295, 0.0008, areWeAtDamp);
-}
-
-function areWeAtDamp(weAre){
-if(weAre){
-window.localStorage.clear();
-document.getElementById("notAtDamp").style.display = "none";
-document.getElementById("atDamp").style.display = "block";
-} else {
-document.getElementById("notAtDamp").style.display = "block";
-}
-}
-</script>
 </body>
 </html> 
