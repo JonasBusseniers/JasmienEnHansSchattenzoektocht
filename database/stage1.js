@@ -85,5 +85,3 @@ if(!locations){
 var order = [2,5,7,1,6,8,0,3,4];
 
 var bgImg = "url('images/stage1/happy.jpg')";
-
-var lastStage = false;

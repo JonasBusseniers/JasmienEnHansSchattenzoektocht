@@ -43,9 +43,6 @@ atLocation(location.coords.lat,location.coords.long, areWeAtImage)
 function areWeAtImage(weAre){
 if(weAre){
 var location = locations[checkingLocationIndex];
-if(location.id == "2-4"){
-alert("Hint: het volgende kruispunt is niet ver!");
-}
 location.found = true;
 window.localStorage.setItem(stageId, JSON.stringify(locations));
 document.getElementById(location.id).style.borderColor = "lime";
@@ -102,11 +99,6 @@ for(p = 0; p < 11; p++){
 command = "fadeLocations(" + (10-p).toString() + ")";
 setTimeout(command,p * 500);
 }
-if(lastStage){
-randomFw();
-setInterval(randomFw,2000);
-setInterval(slideShow,6000);
-}
 }
 
 function fadeLocations(o){
@@ -116,12 +108,3 @@ document.getElementById(location.id).setAttribute("style","opacity:" + o/10 + ";
 }
 }
 
-function randomFw(){
-var r=4+parseInt(Math.random()*16);for(var i=r; i--;){setTimeout('createFirework(8,14,2,null,null,null,null,null,Math.random()>0.5,true)',(i+1)*(1+parseInt(Math.random()*1000)));}return false
-}
-
-function slideShow(){
-imageGrid.style.backgroundImage = "url('images/stage1/happy.jpg')";
-setTimeout(function(){ imageGrid.style.backgroundImage = "url('images/stage2/30bd.jpg')"; }, 2000);
-setTimeout(function(){ imageGrid.style.backgroundImage = "url('images/stage3/fene.jpg')"; }, 4000);
-}

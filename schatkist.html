@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/image-grid.css">
+    <link rel="stylesheet" type="text/css" href="fireworksjs/style/fireworks.css" media="screen" />
+    <script type="text/javascript" src="fireworksjs/script/fireworks.js"></script>
+    <title>Schattentocht - De Schatkist</title>
+</head>
+<body>
+<div id="fireworks-template">
+    <div id="fw" class="firework"></div>
+    <div id="fp" class="fireworkParticle"><img src="fireworksjs/image/particles.gif" alt="" /></div>
+</div>
+<div id="fireContainer"></div>
+<div id="overlay" class="overlay">
+    <div class="loader"></div>
+</div>
+
+<nav class="navbar navbar-dark" style="background-color: #5c5c5c;"><h1 class="navbar-brand">Schattentocht: De schatkist</h1></nav>
+
+<div><p>Dit is de schatkist:</p>
+<img src="stage3/schatkist.png"></div>
+
+<script>
+var lastStage = true;
+window.onload = function () {
+randomFw();
+setInterval(randomFw,2000);
+}
+
+function randomFw(){
+var r=4+parseInt(Math.random()*16);for(var i=r; i--;){setTimeout('createFirework(8,14,2,null,null,null,null,null,Math.random()>0.5,true)',(i+1)*(1+parseInt(Math.random()*1000)));}return false
+}
+</script>
+</body>
+</html>

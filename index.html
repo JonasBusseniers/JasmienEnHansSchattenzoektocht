@@ -5,23 +5,58 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="css/general.css">
     <script src="js/location.js"></script>
-
+    <title>Schattentocht</title>
 
 </head>
 <body>
 
-<div id="overlay"  class="overlay">
+<div id="overlay" class="overlay">
     <div class="loader"></div>
 </div>
 
-<h1>Schattenzoektocht met Jasmien en Hans!</h1>
-<h2>Proficiat!!</h2>
+<nav class="navbar navbar-dark" style="background-color: #5c5c5c;">
+
+        <h1>Schattentocht met Jasmien en Hans!</h1>
+</nav>
+
+<div class="instructions"><p>Dag Hans en Jasmien! Eerst en vooral dikke dikke prociat met julllie trouw! Geniet nu maar
+    even van wat rust met jullie tweetjes!
+    Om verder te gaan met de schattentocht dienen jullie eerst thuis te zijn. Klik daarvoor op de knop hieronder.</p>
+    <p style="color:red;">Het spel is momenteel nog niet af en zal nog niet werken. Ik werk dit de komende week af!</p>
+</div>
+<div style="margin:10px">
+<div><a onclick="benIkThuis()" class="btn btn-info">Ben ik thuis?</a></div>
+<div id="jeBentThuis" style="display:none"><p>Ja, je bent thuis!</p>
+<a href="#" class="btn btn-warning">Deze knop zal je verder brengen, eens het spel af is.</a>
+</div>
+    <div id="jeBentNietThuis" style="display:none"><p>Nee, je bent niet thuis! Probeer opnieuw!</p></div>
 
 </div>
 
+<script>
+    function benIkThuis(){
+   atLocationWithRadius(50.963752, 3.754895 , 0.001, ikBenThuis);
+    }
+
+    function ikBenThuis(thuis){
+
+    if(thuis){
+    document.getElementById("jeBentNietThuis").style.display = "none";
+    document.getElementById("jeBentThuis").style.display = "block";
+
+    } else {
+    document.getElementById("jeBentThuis").style.display = "none";
+    document.getElementById("jeBentNietThuis").style.display = "block";
+    }
+    }
+
+
+
+</script>
 
 </body>
 </html> 
