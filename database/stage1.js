@@ -75,7 +75,7 @@ var locationsNew = [
     }
   ];
 
-var stageId = "locations1";
+var stageId = "fase1";
 var locations = JSON.parse(window.localStorage.getItem(stageId));
 
 if(!locations){
